@@ -37,11 +37,11 @@ function App() {
         <div className="px-4 py-6">
           <h1 className="text-5xl text-white font-extrabold">Generate a CSS Color Gradient</h1>
 
-          <h2 className="text-xl text-w hite text-center py-3 mt-2">Choose orientation</h2>
+          <h2 className="text-xl text-white text-center py-3 mt-2">Choose orientation</h2>
 
           <div className="flex items-center justify-center p-2 gap-5">
 
-              <button title="to top">
+              <button title="to top" onClick={generateColors}>
               <img src={arrow} alt="arrow to top" />
               </button>
 
@@ -74,7 +74,7 @@ function App() {
               </button>
 
               <button>
-              <img src={arrow} alt="radial" className="px-1.5" />
+              <img src={radial} alt="radial" className="px-1.5" />
               </button>
 
           </div>
