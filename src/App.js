@@ -6,8 +6,34 @@ import { useState, useEffect } from "react";
 import chroma from 'chroma-js';
 
 function App() {
-  return (
-      <div className="flex items-center bg-gray-900 justify-center fixed inset-0">
+    const [color1, setColor1] = useState("#071936");
+    const [color2, setColor2] = useState("#075059");
+    const [direction, setDirection] = useState("linear-gradient");
+    const [generated1, setGenerated1] = useState("");
+    const [generated2, setGenerated2] = useState("");
+    const [generated3, setGenerated3] = useState("");
+    const [orientation, setOrientation] = useState("to right bottom");
+
+
+
+    const generateColors = function () {
+        let word = chroma.scale([color1,color2])
+            .mode('lch').colors(5);
+        setGenerated1(word[1]);
+        setGenerated2(word[2]);
+        setGenerated3(word[3]);
+        console.log(generated1, generated2, generated3);
+    }
+
+    const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2            +")" }
+    const cssCode = direction+ "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+");";
+    useEffect(() => {
+        generateColors();
+        console.log(ulStyle)
+    });
+
+    return (
+      <div className="flex items-center bg-gray-900 justify-center fixed inset-0" style={ulStyle}>
         <div className="px-4 py-6">
           <h1 className="text-5xl text-white font-extrabold">Generate a CSS Color Gradient</h1>
 
