@@ -115,8 +115,18 @@ function App() {
 
 
             <div className="flex gap-5 justify-center">
-                <input type="text" className="text-white rounded px-2 py-3 text-center shadow-2xl bg-red-900" name="hex" value="Red" />
-                <input type="text" className="text-white rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-700" name="hex2" value="Blue"/>
+                <input type="text"
+                       onSubmit={generateColors}
+                       onChange={(e) => setColor1(e.target.value)}
+                       defaultValue={color1}
+                       style={{ background: color1 }}
+                       className="text-white rounded px-2 py-3 text-center shadow-2xl bg-red-900" name="hex" />
+                <input type="text"
+                       onSubmit={generateColors}
+                       onChange={(e) => setColor2(e.target.value)}
+                       defaultValue={color2}
+                       style={{ background: color2 }}
+                       className="text-white rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-700" name="hex2"/>
             </div>
 
             <div className="w-full box p-3 mt-5">
