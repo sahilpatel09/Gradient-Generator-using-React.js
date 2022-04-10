@@ -14,7 +14,7 @@ function App() {
     const [generated3, setGenerated3] = useState("");
     const [orientation, setOrientation] = useState("to right bottom");
 
-    const chnageOrientation = function (ori){
+    const changeOrientation = function (ori){
         console.log(ori)
         if(ori === "circle"){
             setDirection("radial-gradient")
@@ -52,39 +52,39 @@ function App() {
 
           <div className="flex items-center justify-center p-2 gap-5">
 
-              <button title="to top" onClick={generateColors}>
+              <button title="to top" onClick={() => changeOrientation("to top") }>
               <img src={arrow} alt="arrow to top" />
               </button>
 
-              <button title="to right top">
+              <button title="to right top" onClick={() => changeOrientation("to right top") }>
               <img src={arrow} alt="arrow to right top" className="transform rotate-45" />
               </button>
 
-              <button title="to right">
+              <button title="to right" onClick={() => changeOrientation("to right") }>
               <img src={arrow} alt="arrow to right" className="transform rotate-90" />
               </button>
 
-              <button title="to right bottom">
+              <button title="to right bottom" onClick={() => changeOrientation("to right bottom") }>
               <img src={arrow} alt="arrow to right bottom" className="rotate-135" />
               </button>
 
-              <button title="to bottom">
+              <button title="to bottom" onClick={() => changeOrientation("to bottom") }>
               <img src={arrow} alt="arrow to bottom" className="transform rotate-180" />
               </button>
 
-              <button title="to bottom left">
+              <button title="to bottom left" onClick={() => changeOrientation("to bottom left") }>
               <img src={arrow} alt="arrow to bottom left" className="rotate-225" />
               </button>
 
-              <button title="to left">
+              <button title="to left" onClick={() => changeOrientation("to left") }>
               <img src={arrow} alt="arrow to left" className="transform -rotate-90" />
               </button>
 
-              <button title="to left top">
+              <button title="to left top" onClick={() => changeOrientation("to left top") }>
               <img src={arrow} alt="arrow to left top" className="transform rotate-180" />
               </button>
 
-              <button>
+              <button onClick={() => changeOrientation("circle") }>
               <img src={radial} alt="radial" className="px-1.5" />
               </button>
 
