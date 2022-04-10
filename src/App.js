@@ -14,7 +14,18 @@ function App() {
     const [generated3, setGenerated3] = useState("");
     const [orientation, setOrientation] = useState("to right bottom");
 
+    const chnageOrientation = function (ori){
+        console.log(ori)
+        if(ori === "circle"){
+            setDirection("radial-gradient")
+            setOrientation(ori)
+        }else{
+            setDirection("linear-gradient")
+            setOrientation(ori)
+        }
 
+
+    }
 
     const generateColors = function () {
         let word = chroma.scale([color1,color2])
