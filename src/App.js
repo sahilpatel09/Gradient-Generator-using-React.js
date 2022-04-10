@@ -13,7 +13,7 @@ function App() {
     const [generated2, setGenerated2] = useState("");
     const [generated3, setGenerated3] = useState("");
     const [orientation, setOrientation] = useState("to right bottom");
-
+    const [error, setError] = useState("")
     const changeOrientation = function (ori){
         console.log(ori)
         if(ori === "circle"){
@@ -28,12 +28,20 @@ function App() {
     }
 
     const generateColors = function () {
-        let word = chroma.scale([color1,color2])
-            .mode('lch').colors(5);
-        setGenerated1(word[1]);
-        setGenerated2(word[2]);
-        setGenerated3(word[3]);
-        console.log(generated1, generated2, generated3);
+        if(chroma.valid(color1) && chroma.valid(color2)){
+
+            let word = chroma.scale([color1,color2])
+                .mode('lch').colors(5);
+            setGenerated1(word[1]);
+            setGenerated2(word[2]);
+            setGenerated3(word[3]);
+            console.log(generated1, generated2, generated3);
+            setError("")
+
+        }else{
+            setError("Color are no valid.")
+        }
+
     }
 
     const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2            +")" }
@@ -92,6 +100,11 @@ function App() {
 
 
             <h2 className="text-xl text-white text-center py-3 mt-5">Enter Colors</h2>
+            <div className="text-white text-center py-2 rounded mb-3  text-white w-40 mx-auto">
+                <h2 className="bg-amber-700">{error}</h2>
+            </div>
+
+
             <div className="flex gap-5 justify-center">
                 <input type="text" className="text-white rounded px-2 py-3 text-center shadow-2xl bg-red-900" name="hex" value="Red" />
                 <input type="text" className="text-white rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-700" name="hex2" value="Blue"/>
