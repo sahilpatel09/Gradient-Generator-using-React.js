@@ -78,6 +78,25 @@ function App() {
               </button>
 
           </div>
+
+
+            <h2 className="text-xl text-white text-center py-3 mt-5">Enter Colors</h2>
+            <div className="flex gap-5 justify-center">
+                <input type="text" className="text-white rounded px-2 py-3 text-center shadow-2xl bg-red-900" name="hex" value="Red" />
+                <input type="text" className="text-white rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-700" name="hex2" value="Blue"/>
+            </div>
+
+            <div className="w-full box p-3 mt-5">
+                <p className="text-left text-gray-100 max-w-xl mx-auto text-xl font-mono">
+                    background-image: { cssCode }
+                </p>
+            </div>
+
+
+
+
+
+
         </div>
       </div>
   );
