@@ -44,7 +44,17 @@ function App() {
 
     }
 
-    const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2            +")" }
+    const invertColor = function (color){
+        const contrast = chroma(color).luminance();
+        if(contrast < 0.6){
+            return chroma(color).brighten(5).hex()
+        }else{
+            return chroma(this.color).darken(5).hex()
+        }
+    }
+
+    const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+")" }
+    //const boxOneStyle = { background: color1; color: }
     const cssCode = direction+ "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+");";
     useEffect(() => {
         generateColors();
@@ -55,8 +65,7 @@ function App() {
       <div className="flex items-center bg-gray-900 justify-center fixed inset-0" style={ulStyle}>
         <div className="px-4 py-6">
           <h1 className="text-5xl text-white font-extrabold">Generate a CSS Color Gradient</h1>
-
-          <h2 className="text-xl text-white text-center py-3 mt-2">Choose orientation</h2>
+            <h2 className="text-xl text-white text-center py-3 mt-2">Choose orientation</h2>
 
           <div className="flex items-center justify-center p-2 gap-5">
 
