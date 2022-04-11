@@ -2,7 +2,7 @@ import './App.css';
 import './assets/tailwind.css';
 import arrow from './assets/img/arrow.svg';
 import radial from './assets/img/radial.svg';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import chroma from 'chroma-js';
 
 function App() {
