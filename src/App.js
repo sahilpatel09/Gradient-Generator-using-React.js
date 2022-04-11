@@ -138,19 +138,30 @@ function App() {
             </div>
 
 
-            <div className="flex gap-5 justify-center">
-                <input type="text"
-                       onSubmit={generateColors}
-                       onChange={(e) => setColor1(e.target.value)}
-                       defaultValue={color1}
-                       style={{ background: color1 }}
-                       className="text-white rounded px-2 py-3 text-center shadow-2xl bg-red-900" name="hex" />
-                <input type="text"
-                       onSubmit={generateColors}
-                       onChange={(e) => setColor2(e.target.value)}
-                       defaultValue={color2}
-                       style={{ background: color2 }}
-                       className="text-white rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-700" name="hex2"/>
+            <div className="flex items-center justify-center flex-wrap">
+                <form className="flex gap-5 justify-center items-center flex-wrap">
+
+                    <input type="text"
+                           ref={hex}
+                           defaultValue={color1}
+                           style={icolor1}
+                           className="rounded px-2 py-3 text-center shadow-2xl bg-red-900" name="hex" />
+
+                    <input type="text"
+                           ref={hex2}
+                           defaultValue={color2}
+                           style={icolor2}
+                           className="rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-700" name="hex2"/>
+
+                    <input
+                        type="submit"
+                        className="hidden"
+                        onClick={(e) => doJob(e)}
+                        />
+
+
+                </form>
+
             </div>
 
             <div className="box md:w-full w-[350px] h-auto mx-auto break-all mt-4 p-2 ">
