@@ -59,13 +59,26 @@ function App() {
 
     }
 
-    const invertColor = function (color){
-        const contrast = chroma(color).luminance();
-        if(contrast < 0.6){
-            return chroma(color).brighten(5).hex()
-        }else{
-            return chroma(this.color).darken(5).hex()
-        }
+    function checkContrast(color){
+                const contrast = chroma(color).luminance();
+                if(contrast > 0.6){
+                    return "#000"
+                    console.log("#000")
+
+                }else{
+                    return "#fff"
+                    console.log("#fff")
+                }
+    }
+
+
+
+    function doJob(e){
+        e.preventDefault();
+        console.log(hex.current.value, hex2.current.value);
+        setColor1(hex.current.value);
+        setColor2(hex2.current.value);
+
     }
 
     const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+")" }
