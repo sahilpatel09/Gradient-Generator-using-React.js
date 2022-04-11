@@ -140,7 +140,7 @@ function App() {
                            ref={hex}
                            defaultValue={color1}
                            style={icolor1}
-                           className="rounded px-2 py-3 text-center shadow-2xl bg-red-900" name="hex" />
+                           className="rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-900" name="hex" />
 
                     <input type="text"
                            ref={hex2}
