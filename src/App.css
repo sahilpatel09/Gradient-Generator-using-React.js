@@ -8,6 +8,8 @@
 button:focus{
     border: 2px solid white;
     border-radius:50%;
+    outline: none;
+    transition: all 220ms ease-in;
 }
 
 .font-cursive {
