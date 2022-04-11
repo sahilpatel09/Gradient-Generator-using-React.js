@@ -86,9 +86,9 @@ function App() {
 
 
     return (
-      <div className="flex items-center bg-gray-900 justify-center md:fixed h-screen inset-0 transition-colors duration-500 px-10" style={ulStyle}>
+      <div className="flex items-center bg-gray-900 justify-center md:fixed h-screen inset-0 px-10" style={ulStyle}>
         <div className="px-4 py-6">
-          <h1 className="md:text-5xl text-white font-extrabold text-center text-lg">Generate a CSS Color Gradient</h1>
+          <h1 className="md:text-5xl text-white font-extrabold text-center text-2xl">Generate a CSS Color Gradient</h1>
             <h2 className="text-xl text-white text-center py-3 mt-2">Choose orientation</h2>
 
           <div className="flex items-center justify-center p-2 gap-2 flex-wrap md:gap-5">
@@ -159,14 +159,13 @@ function App() {
                         onClick={(e) => doJob(e)}
                         />
 
-
                 </form>
 
             </div>
 
-            <div className="box md:w-full w-[350px] h-auto mx-auto break-all mt-4 p-2 ">
-                <p className="p-3 text-gray-200 font-mono text-base text-center">
-                    <span className="text-purple-400">background-image: </span> { cssCode }
+            <div className="box md:w-[640px] w-[350px] h-auto mx-auto break-all mt-4 p-2 ">
+                <p className="p-3 text-gray-200 font-mono text-base md:text-xl text-center font-semibold">
+                    <span className="text-gray-100">background-image: </span> { cssCode }
                 </p>
             </div>
 
