@@ -90,12 +90,12 @@ function App() {
     });
 
     return (
-      <div className="flex items-center bg-gray-900 justify-center fixed inset-0" style={ulStyle}>
+      <div className="flex items-center bg-gray-900 justify-center md:fixed h-screen inset-0 transition-colors duration-500 px-10" style={ulStyle}>
         <div className="px-4 py-6">
-          <h1 className="text-5xl text-white font-extrabold">Generate a CSS Color Gradient</h1>
+          <h1 className="md:text-5xl text-white font-extrabold text-center text-lg">Generate a CSS Color Gradient</h1>
             <h2 className="text-xl text-white text-center py-3 mt-2">Choose orientation</h2>
 
-          <div className="flex items-center justify-center p-2 gap-5">
+          <div className="flex items-center justify-center p-2 gap-2 flex-wrap md:gap-5">
 
               <button title="to top" onClick={() => changeOrientation("to top") }>
               <img src={arrow} alt="arrow to top" />
@@ -136,7 +136,7 @@ function App() {
           </div>
 
 
-            <h2 className="text-xl text-white text-center py-3 mt-5">Enter Colors</h2>
+            <h2 className="text-xl text-white text-center py-3 mt-5 italic font-cursive">Enter Colors & press Enter.</h2>
             <div className="text-white text-center py-2 rounded mb-3  text-white w-40 mx-auto">
                 <h2 className="bg-amber-700">{error}</h2>
             </div>
