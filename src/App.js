@@ -19,7 +19,7 @@ function App() {
     const hex = useRef(color1);
     const hex2 = useRef(color2);
 
-    const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+")" }
+    const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+")"}
     const cssCode = direction+ "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+");";
 
     useEffect(() => {
@@ -63,19 +63,14 @@ function App() {
                 const contrast = chroma(color).luminance();
                 if(contrast > 0.6){
                     return "#000"
-                    console.log("#000")
-
                 }else{
                     return "#fff"
-                    console.log("#fff")
                 }
     }
 
 
-
     function doJob(e){
         e.preventDefault();
-        console.log(hex.current.value, hex2.current.value);
         setColor1(hex.current.value);
         setColor2(hex2.current.value);
 
