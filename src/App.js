@@ -14,6 +14,18 @@ function App() {
     const [generated3, setGenerated3] = useState("");
     const [orientation, setOrientation] = useState("to right bottom");
     const [error, setError] = useState("")
+    const [invertedcolor1, setinvertedColor1 ] = useState("")
+    const [invertedcolor2, setinvertedColor2 ] = useState("")
+    const hex = useRef(color1);
+    const hex2 = useRef(color2);
+
+    const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+")" }
+    const cssCode = direction+ "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+");";
+
+    useEffect(() => {
+        generateColors();
+    });
+
     const changeOrientation = function (ori){
         console.log(ori)
         if(ori === "circle"){
