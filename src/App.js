@@ -153,16 +153,11 @@ function App() {
                        className="text-white rounded px-2 py-3 text-center shadow-2xl font-bold bg-red-700" name="hex2"/>
             </div>
 
-            <div className="w-full box p-3 mt-5">
-                <p className="text-left text-gray-100 max-w-xl mx-auto text-xl font-mono">
-                    background-image: { cssCode }
+            <div className="box md:w-full w-[350px] h-auto mx-auto break-all mt-4 p-2 ">
+                <p className="p-3 text-gray-200 font-mono text-base text-center">
+                    <span className="text-purple-400">background-image: </span> { cssCode }
                 </p>
             </div>
-
-
-
-
-
 
         </div>
       </div>
