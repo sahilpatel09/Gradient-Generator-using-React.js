@@ -80,14 +80,10 @@ function App() {
         setColor2(hex2.current.value);
 
     }
-
-    const ulStyle = { backgroundImage: direction + "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+")" }
     //const boxOneStyle = { background: color1; color: }
-    const cssCode = direction+ "("+orientation+","+color1 +","+generated1 +","+generated2 +","+generated3 +","+color2+");";
-    useEffect(() => {
-        generateColors();
-        console.log(ulStyle)
-    });
+    const icolor1 = { background: color1, color:invertedcolor1 }
+    const icolor2 = { background: color2, color:invertedcolor2 }
+
 
     return (
       <div className="flex items-center bg-gray-900 justify-center md:fixed h-screen inset-0 transition-colors duration-500 px-10" style={ulStyle}>
