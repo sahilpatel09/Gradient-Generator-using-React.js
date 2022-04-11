@@ -40,14 +40,17 @@ function App() {
     }
 
     const generateColors = function () {
-        if(chroma.valid(color1) && chroma.valid(color2)){
 
+        if(chroma.valid(color1) && chroma.valid(color2)){
             let word = chroma.scale([color1,color2])
                 .mode('lch').colors(5);
             setGenerated1(word[1]);
             setGenerated2(word[2]);
             setGenerated3(word[3]);
-            console.log(generated1, generated2, generated3);
+
+            setinvertedColor1(checkContrast(color1))
+            setinvertedColor2(checkContrast(color2))
+
             setError("")
 
         }else{
