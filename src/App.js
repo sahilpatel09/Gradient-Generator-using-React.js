@@ -6,8 +6,8 @@ import { useState, useEffect, useRef } from "react";
 import chroma from 'chroma-js';
 
 function App() {
-    const [color1, setColor1] = useState("#071936");
-    const [color2, setColor2] = useState("#075059");
+    const [color1, setColor1] = useState("#FF6347");
+    const [color2, setColor2] = useState("#0000FF");
     const [direction, setDirection] = useState("linear-gradient");
     const [generated1, setGenerated1] = useState("");
     const [generated2, setGenerated2] = useState("");
